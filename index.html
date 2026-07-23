@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Canteen &mdash; Order &amp; Chat Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#top" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" fill="#E8A33D"/>
+          <path d="M13 20c0-2 2-3 4-3h14c2 0 4 1 4 3 0 6-5 11-11 11s-11-5-11-11z" fill="#F7F3E8"/>
+          <rect x="22" y="10" width="4" height="7" rx="2" fill="#F7F3E8"/>
+          <circle cx="24" cy="31" r="2" fill="#E8A33D"/>
+        </svg>
+      </span>
+      <span class="brand__text">College Canteen</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#top" class="nav-link">Home</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#chat" class="nav-link nav-link--cta">Chat Assistant</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__token" aria-hidden="true">
+      <span class="hero__token-label">TOKEN</span>
+      <span class="hero__token-number">01</span>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow">B.Tech Mini Project &middot; Powered by Dialogflow ES</p>
+      <h1 class="hero__title">Welcome to<br>College Canteen</h1>
+      <p class="hero__subtitle">Order your favourite food with our smart Canteen Assistant.</p>
+      <a href="#chat" class="btn btn--primary" id="heroCta">
+        Chat with Canteen Assistant
+        <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="hero__strip" aria-hidden="true">
+      <span>DOSA</span><span>&middot;</span><span>IDLI</span><span>&middot;</span>
+      <span>FRIED RICE</span><span>&middot;</span><span>SANDWICH</span><span>&middot;</span>
+      <span>TEA</span><span>&middot;</span><span>COFFEE</span><span>&middot;</span>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu" id="menu">
+    <div class="section-head">
+      <p class="eyebrow">Today's Menu</p>
+      <h2 class="section-title">Fresh off the counter</h2>
+      <p class="section-sub">Six canteen classics, priced per token. Ask the assistant for any of these by name.</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <article class="token-card">
+        <div class="token-card__top">
+          <span class="token-card__icon" aria-hidden="true">&#127855;</span>
+          <span class="token-card__no">No. 01</span>
+        </div>
+        <h3 class="token-card__name">Dosa</h3>
+        <p class="token-card__tag">also known as: masala dosa</p>
+        <div class="token-card__perf" aria-hidden="true"></div>
+        <span class="token-card__price">&#8377;40</span>
+      </article>
+
+      <article class="token-card">
+        <div class="token-card__top">
+          <span class="token-card__icon" aria-hidden="true">&#127859;</span>
+          <span class="token-card__no">No. 02</span>
+        </div>
+        <h3 class="token-card__name">Idli</h3>
+        <p class="token-card__tag">also known as: idly</p>
+        <div class="token-card__perf" aria-hidden="true"></div>
+        <span class="token-card__price">&#8377;30</span>
+      </article>
+
+      <article class="token-card">
+        <div class="token-card__top">
+          <span class="token-card__icon" aria-hidden="true">&#127838;</span>
+          <span class="token-card__no">No. 03</span>
+        </div>
+        <h3 class="token-card__name">Fried Rice</h3>
+        <p class="token-card__tag">also known as: rice</p>
+        <div class="token-card__perf" aria-hidden="true"></div>
+        <span class="token-card__price">&#8377;70</span>
+      </article>
+
+      <article class="token-card">
+        <div class="token-card__top">
+          <span class="token-card__icon" aria-hidden="true">&#127828;</span>
+          <span class="token-card__no">No. 04</span>
+        </div>
+        <h3 class="token-card__name">Sandwich</h3>
+        <p class="token-card__tag">grilled &amp; toasted</p>
+        <div class="token-card__perf" aria-hidden="true"></div>
+        <span class="token-card__price">&#8377;50</span>
+      </article>
+
+      <article class="token-card">
+        <div class="token-card__top">
+          <span class="token-card__icon" aria-hidden="true">&#127861;</span>
+          <span class="token-card__no">No. 05</span>
+        </div>
+        <h3 class="token-card__name">Tea</h3>
+        <p class="token-card__tag">also known as: chai</p>
+        <div class="token-card__perf" aria-hidden="true"></div>
+        <span class="token-card__price">&#8377;15</span>
+      </article>
+
+      <article class="token-card">
+        <div class="token-card__top">
+          <span class="token-card__icon" aria-hidden="true">&#9749;</span>
+          <span class="token-card__no">No. 06</span>
+        </div>
+        <h3 class="token-card__name">Coffee</h3>
+        <p class="token-card__tag">filter coffee</p>
+        <div class="token-card__perf" aria-hidden="true"></div>
+        <span class="token-card__price">&#8377;20</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ CHATBOT ============ -->
+  <section class="chat" id="chat">
+    <div class="section-head">
+      <p class="eyebrow">Service Window</p>
+      <h2 class="section-title">Canteen Assistant</h2>
+      <p class="section-sub">Ask me about the menu or place your order.</p>
+    </div>
+
+    <div class="chat-window">
+      <div class="chat-window__header">
+        <span class="chat-window__dot"></span>
+        <span class="chat-window__dot"></span>
+        <span class="chat-window__dot"></span>
+        <span class="chat-window__title">Canteen Assistant</span>
+      </div>
+
+      <div class="chat-window__body">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input-container">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." autocomplete="off">
+          <button type="button" id="chatSendBtn" class="chat-send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <p class="chat-note">Chat responses powered by the College Canteen Dialogflow ES agent.</p>
+  </section>
+
+  <!-- ============ HOW TO USE ============ -->
+  <section class="how" id="how">
+    <div class="section-head">
+      <p class="eyebrow">How It Works</p>
+      <h2 class="section-title">Three steps to your order</h2>
+      <p class="section-sub">The Canteen Assistant reads what you type, matches it to an intent in Dialogflow, and replies accordingly &mdash; no menu-tapping required.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step__no">01</span>
+        <h3 class="step__title">Ask for the menu</h3>
+        <p class="step__desc">Start the conversation and ask what's available today.</p>
+        <p class="step__example">&ldquo;Show me the menu&rdquo;</p>
+      </div>
+
+      <div class="step">
+        <span class="step__no">02</span>
+        <h3 class="step__title">Place an order</h3>
+        <p class="step__desc">Tell the assistant what you'd like, in your own words.</p>
+        <p class="step__example">&ldquo;I want 2 dosas&rdquo;</p>
+      </div>
+
+      <div class="step">
+        <span class="step__no">03</span>
+        <h3 class="step__title">Confirm your order</h3>
+        <p class="step__desc">The assistant repeats your order back &mdash; just confirm it.</p>
+        <p class="step__example">&ldquo;Yes&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__brand">College Canteen Chatbot</p>
+    <p class="footer__meta">Powered by Dialogflow &middot; College Mini Project</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
