@@ -5,12 +5,20 @@ const { SessionsClient } = require('@google-cloud/dialogflow');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const PROJECT_ID = 'canteenbot-9iv9';
-const KEY_FILE = path.join(__dirname, 'credentials', 'dialogflow-key.json');
+const KEY_FILE =
+  process.env.GOOGLE_APPLICATION_CREDENTIALS ||
+  path.join(__dirname, 'credentials', 'dialogflow-key.json');
 
 let sessionClient;
 try {
   sessionClient = new SessionsClient({ keyFilename: KEY_FILE });
   console.log('Dialogflow client initialized successfully.');
+  console.log(
+    'Dialogflow credentials source:',
+    process.env.GOOGLE_APPLICATION_CREDENTIALS
+      ? 'Environment/Render Secret File'
+      : 'Local credentials file'
+  );
 } catch (err) {
   console.error('Failed to initialize Dialogflow client:', err.message);
   process.exit(1);
